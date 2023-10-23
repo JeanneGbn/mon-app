@@ -289,3 +289,7 @@ html {
       width: 200px;
     }
   }
+
+  .hidden {
+    display: none;
+  }
