@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser, userProfile } from '../features/API';
+import { loginUser, userProfile } from '../redux/API';
 import { useNavigate } from "react-router-dom";
 
-export const LoginModal = () => {
+export const Form = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,7 +34,7 @@ export const LoginModal = () => {
 
   return (
     <section className="sign-in-content">
-      
+      <i className="fa fa-user-circle sign-in-icon"></i>
       <h1>Sign In</h1>
       <form onSubmit={handleLoginEvent}>
         <div className="input-wrapper">

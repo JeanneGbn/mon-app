@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Account } from "../components/Account"
 import { useDispatch, useSelector } from "react-redux";
-import { userNameEdit } from "../features/API";
+import { userNameEdit } from "../redux/API";
 import {Link} from "react-router-dom"
 
 const placeholderDetails = [{

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { loginUser, userProfile, userNameEdit } from '../API';
+import { loginUser, userProfile, userNameEdit } from './API';
 
 
 const userSlice = createSlice({
@@ -21,10 +21,7 @@ const userSlice = createSlice({
     .addCase(loginUser.fulfilled,(state, action)=>{
       state.token = action.payload.body.token;
    })
-   .addCase(loginUser.rejected,(state,action)=>{
-    state.token = null;
-    
-   })
+
    .addCase(userProfile.fulfilled,(state, action)=>{
     state.userInfo = action.payload.body;
  })
@@ -36,11 +33,7 @@ const userSlice = createSlice({
   console.log("Successfully changed user name !");
   state.userInfo = action.payload.body;
 })
-.addCase(userNameEdit.rejected,(state,action)=>{
-  console.log(action.error.message);
-})
-
-  }
+ }
 })
 
 export const {reset} = userSlice.actions;

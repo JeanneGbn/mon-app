@@ -1,8 +1,8 @@
 import React from "react"
-import { LoginModal } from "../components/LoginModal"
+import { Form } from "../components/Form"
 
 export const Login = () => {
    return <main className="main bg-dark">
-	<LoginModal />
+	<Form />
 </main>
 }
