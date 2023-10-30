@@ -25,7 +25,6 @@ export const Form = () => {
         dispatch(userProfile()).then((result) => {});
         navigate("/profile");
       } else {
-        console.error("Erreur dans l'identifiant ou le mot de passe")
         errorConnection.classList.remove("hidden")
       }
     });

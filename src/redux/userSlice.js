@@ -22,17 +22,17 @@ const userSlice = createSlice({
       state.token = action.payload.body.token;
    })
 
-   .addCase(userProfile.fulfilled,(state, action)=>{
+    .addCase(userProfile.fulfilled,(state, action)=>{
     state.userInfo = action.payload.body;
- })
- .addCase(userProfile.rejected,(state,action)=>{
-  state.userInfo = "";
-  console.log(action.error.message);
- })
- .addCase(userNameEdit.fulfilled,(state, action)=>{
-  console.log("Successfully changed user name !");
-  state.userInfo = action.payload.body;
-})
+   })
+    .addCase(userProfile.rejected,(state,action)=>{
+      state.userInfo = "";
+      console.log(action.error.message);
+   })
+    .addCase(userNameEdit.fulfilled,(state, action)=>{
+      console.log("Successfully changed user name !");
+      state.userInfo = action.payload.body;
+   })
  }
 })
 
