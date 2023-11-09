@@ -1,7 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
 import argentBankLogo from "../img/argentBankLogo.png"
-import { Nav } from "./Nav"
+import { Nav } from "./Nav.js"
 
 
 

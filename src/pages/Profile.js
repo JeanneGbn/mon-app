@@ -1,24 +1,27 @@
 import React, { useState } from "react"
 import { Account } from "../components/Account"
 import { useDispatch, useSelector } from "react-redux";
-import { userNameEdit } from "../redux/API";
+import { userNameEdit } from "../redux/API.js";
 import {Link} from "react-router-dom"
 
-const placeholderDetails = [{
-	title: "Argent Bank Checking (x8349)",
-	amount: "$2,082.79",
-	description: "Available Balance",
-},
-{
-	title: "Argent Bank Savings (x6712)",
-	amount: "$10,928.42",
-	description: "Available Balance",
-},
-{
-	title: "Argent Bank Credit Card (x8349)",
-	amount: "$184.30",
-	description: "Available Balance",
-}]
+const accountDetails = [{
+	  title: "Argent Bank Checking (x8349)",
+	  amount: "$2,082.79",
+	  description: "Available Balance",
+  },
+  {
+	  title: "Argent Bank Savings (x6712)",
+	  amount: "$10,928.42",
+	  description: "Available Balance",
+  },
+  {
+	  title: "Argent Bank Credit Card (x8349)",
+	  amount: "$184.30",
+	  description: "Available Balance",
+  }
+]
+
+
 
 export const Profile = () =>{
 	const [showForm, setShowForm] = useState(false);
@@ -49,8 +52,8 @@ export const Profile = () =>{
 	if(!hasToken){
 		return <main className="main bg-dark">
 				<div className="header login-error">
-					<h1>You need to sign in to see this page !</h1>
-					<Link to="/">Go back to the homepage</Link>
+					<h1> Échec d'authentification. Veuillez vérifier vos informations. </h1>
+					<Link to="/"> Retourner à la page d'accueil </Link>
 		</div>
 		</main>
 	}
@@ -107,7 +110,7 @@ export const Profile = () =>{
 	</div>
 	<h2 className="sr-only">Accounts</h2>
 	{
-		placeholderDetails.map((details, index) => (
+		accountDetails.map((details, index) => (
 			<Account key={index} title={details.title} description={details.description} amount={details.amount}/>
 		)) 
 	}
